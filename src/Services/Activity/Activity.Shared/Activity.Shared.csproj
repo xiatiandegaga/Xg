@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Dto\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WebApiClientCore" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Base\Xg.Cloud.Core\Xg.Cloud.Core.csproj" />
+    <ProjectReference Include="..\..\..\Base\Xg.Cloud.Domain\Xg.Cloud.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

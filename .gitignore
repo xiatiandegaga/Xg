@@ -1,0 +1,11 @@
+﻿*.pdb
+bin/
+.vs/
+obj/
+NoUpload/
+*.user
+PublishProfiles/
+api.xml
+domain.xml
+Log/
+logs/

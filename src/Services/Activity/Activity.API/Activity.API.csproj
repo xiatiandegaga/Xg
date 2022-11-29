@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Base\Xg.Cloud.AutoMapper\Xg.Cloud.AutoMapper.csproj" />
+    <ProjectReference Include="..\..\..\Base\Xg.Cloud.Core\Xg.Cloud.Core.csproj" />
+    <ProjectReference Include="..\..\..\Base\Xg.Cloud.Cors\Xg.Cloud.Cors.csproj" />
+    <ProjectReference Include="..\..\..\Base\Xg.Cloud.EntityFrameworkCore.PostgreSQL\Xg.Cloud.EntityFrameworkCore.PostgreSQL.csproj" />
+    <ProjectReference Include="..\..\..\Base\Xg.Cloud.EntityFrameworkCore\Xg.Cloud.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\Base\Xg.Cloud.Http.Client\Xg.Cloud.Http.Client.csproj" />
+    <ProjectReference Include="..\..\..\Base\Xg.Cloud.Jwt\Xg.Cloud.Jwt.csproj" />
+    <ProjectReference Include="..\..\..\Base\Xg.Cloud.Swagger\Xg.Cloud.Swagger.csproj" />
+    <ProjectReference Include="..\..\..\Base\Xq.Cloud.Caching\Xg.Cloud.Caching.csproj" />
+    <ProjectReference Include="..\..\IdentityService\Identity.Shared\Identity.Shared.csproj" />
+    <ProjectReference Include="..\Activity.Shared\Activity.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<UserSecretsId>a595be80-ee66-45e8-9776-bea35ad4bad4</UserSecretsId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <DocumentationFile>bin\Release\net7.0\IdentityApi.xml</DocumentationFile>
+	  <OutputPath>bin\Release\</OutputPath>
+	  <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <OutputPath>bin\Release\net7.0\</OutputPath>
+	  <DocumentationFile>bin\Release\net7.0\IdentityApi.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Base\Xg.Cloud.Api.Tencent\Xg.Cloud.Api.Tencent.csproj" />
+		<ProjectReference Include="..\..\..\Base\Xg.Cloud.Haibianli\Xg.Cloud.HaiBianLi.csproj" />
+		<ProjectReference Include="..\..\..\Base\Xg.Cloud.HuiYiJie\Xg.Cloud.HuiYiJie.csproj" />
+		<ProjectReference Include="..\..\..\Base\Xg.Cloud.Parking\Xg.Cloud.Parking.csproj" />
+		<ProjectReference Include="..\..\..\Base\Xg.Cloud.PrivateNumber\Xg.Cloud.PrivateNumber.csproj" />
+		<ProjectReference Include="..\Application\Application.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="apiclient_cert.p12">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+
+		<None Update="Deploy\microweb\standard-backend-deployment.yml">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Dockerfile">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Deploy\microweb\dev-backend-microweb-deployment.yaml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Deploy\microweb\dev-backend-microweb-service.yml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Deploy\microweb\dev\dev-backend-microweb-deployment.yaml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Deploy\backend\backend-ingress.yaml">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+
+		</None>
+		<None Update="Deploy\backend\deployment.yaml">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="deploy\backend\front-ingress.yaml">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Deploy\backend\service.yaml">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Dockerfile">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="deploy\standard-backend-deployment.yml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="deploy\standard-backend-deployment.yml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="deploy\standard-backend-service.yml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Deploy\product\" />
+	  <Folder Include="Properties\PublishProfiles\" />
+	</ItemGroup>
+
+	<ProjectExtensions>
+		<VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio>
+	</ProjectExtensions>
+
+
+</Project>

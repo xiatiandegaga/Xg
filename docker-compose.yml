@@ -1,0 +1,63 @@
+version: '3.4'
+
+services:
+
+  identity-api:
+    image: identity-api:latest
+    ports:
+     - "51000:50001"
+     - "30001:30000"
+     - "5111:80"
+    build:
+      context: .
+      dockerfile: src/Services/IdentityService/IdentityApi/identity-api-Dockerfile
+    #volumes:
+    #  - /home/nan-jing-vanke/identity.api:/app
+    networks:
+      - hello-dapr
+  identity-api-dapr:
+     image: "daprio/daprd:edge"
+     command: [
+      "./daprd",
+     "-app-id", "identity",
+     "-app-port", "80",
+      "-dapr-grpc-port", "50001",
+      "-dapr-http-port", "30000",
+      #"--urls","http://127.0.0.1:81"
+     ]
+     depends_on:
+      - identity-api
+     network_mode: "service:identity-api" # Attach the nodeapp-dapr service to the nodeapp network namespace
+
+  activity-api:
+    image: activity-api:latest
+    ports:
+     - "52000:50001"
+     - "30002:30000"
+    build:
+      context: .
+      dockerfile: src/Services/Activity/Activity.API/activity-api-Dockerfile
+    #volumes:
+    #  - /home/nan-jing-vanke/activity.api:/app
+    networks:
+      - hello-dapr
+    depends_on:
+      - identity-api
+
+  activity-api-dapr:
+     image: "daprio/daprd:edge"
+     command: [
+      "./daprd",
+      "-app-id", "activity",
+     "-app-port", "80",
+      "-dapr-grpc-port", "50001",
+      "-dapr-http-port", "30000",
+      #"--urls","http://127.0.0.1:81"
+     
+     ]
+     depends_on:
+      - activity-api
+     network_mode: "service:activity-api" 
+networks:
+  hello-dapr:
+    driver: bridge

@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: <env>-backend-<project>
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: <env>-backend-<project>-service	 #Service 的名称
+  namespace: <env>-backend-<project>
+  labels:     	#Service 自己的标签
+    app: <env>-backend-<project>	#为该 Service 设置 key 为 app，value 为 <env>-backend-<project> 的标签
+    service: <env>-backend-<project>-identity
+spec:	    #这是关于该 Service 的定义，描述了 Service 如何选择 Pod，如何被访问
+  selector:	    #标签选择器
+    #app: <env>-backend-<project> #选择包含标签 app:<env>-backend-<project> 的 Pod
+    service: <env>-backend-<project>-identity
+  ports:
+  - name: <env>-backend-<project>-port	#端口的名字
+    protocol: TCP	    #协议类型 TCP/UDP
+    port: 80	        #集群内的其他容器组可通过 80 端口访问 Service
+    #nodePort: 32700   #通过任意节点的 32600 端口访问 Service
+    targetPort: 80	#将请求转发到匹配 Pod 的 80 端口
+  #- port: 81
+  #  targetPort: 3500
+  #  protocol: TCP
+  #  name: daprhttp
+  #- port: 50001
+  #  targetPort: 50001
+  #  protocol: TCP
+  #  name: daprgrpc
+  type: ClusterIP	#Serive的类型，ClusterIP/NodePort/LoaderBalancer

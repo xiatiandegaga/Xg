@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Xg.Cloud.Core\Xg.Cloud.Core.csproj" />
+    <ProjectReference Include="..\Xg.Cloud.Http.Client\Xg.Cloud.Http.Client.csproj" />
+  </ItemGroup>
+
+</Project>

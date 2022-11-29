@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Base\Xg.Cloud.Core\Xg.Cloud.Core.csproj" />
+    <ProjectReference Include="..\..\src\Base\Xg.Cloud.Swagger\Xg.Cloud.Swagger.csproj" />
+  </ItemGroup>
+
+</Project>
