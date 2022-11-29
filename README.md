@@ -1,2 +1,2 @@
 # Xg
-.net+dapr+efcore+cache+repository
+.net+module+dapr+efcore+cache+repository
